@@ -8,18 +8,6 @@ Version: 1.0
 Text Domain: motaphoto
 */
 
-/* Déclaration des polices locales */
-@font-face {
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Space Mono';
-    src: url('assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'),
-         url('assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
-}
-
 /* Styles pour les titres et paragraphes */
 h1 {
     font-family: "Space Mono", monospace;

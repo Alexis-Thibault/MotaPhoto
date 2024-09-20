@@ -7,3 +7,49 @@ Description: Thème pour le site "Nathalie Mota"
 Version: 1.0
 Text Domain: motaphoto
 */
+
+/* Déclaration des polices locales */
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'),
+         url('assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
+}
+
+/* Styles pour les titres et paragraphes */
+h1 {
+    font-family: "Space Mono", monospace;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+h2 {
+    font-family: "Space Mono", monospace;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+h3 {
+    font-family: "Space Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+h4 {
+    font-family: "Space Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+p {
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 300;
+}

@@ -16,10 +16,19 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt="Logo">
             </a>
         </div>
-        <div>
-            <a href="<?php echo home_url(); ?>">Accueil</a>
-            <a href="<?php echo home_url('/about'); ?>">À propos</a>
-            <a href="<?php echo home_url('/contact'); ?>">Contact</a>
+        <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'header-menu',
+                'container' => false,
+                'items_wrap' => '%3$s',
+            ));
+            ?>
         </div>
     </nav>
 </header>

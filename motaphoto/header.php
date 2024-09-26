@@ -8,3 +8,14 @@
     <?php wp_head(); ?>
   </head>
   <body>
+
+  <nav>
+    <div>
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt="Logo">
+    </div>
+    <div>
+      <a href="#">Accueil</a>
+      <a href="#">À propos</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>

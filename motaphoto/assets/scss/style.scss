@@ -12,3 +12,50 @@ Text Domain: motaphoto
 @import 'partials/variables';
 @import 'partials/header';
 @import 'partials/footer';
+
+
+// style.scss
+
+h1 {
+    font-family: $font-space-mono;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    font-style: italic;
+}
+
+h2 {
+    font-family: $font-space-mono;
+    font-size: $font-size-h2;
+    font-weight: $font-weight-normal;
+    font-style: italic;
+}
+
+h3 {
+    font-family: $font-space-mono;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-normal;
+    font-style: italic;
+}
+
+h4 {
+    font-family: $font-space-mono;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-normal;
+}
+
+a {
+    font-family: $font-space-mono;
+    font-size: $font-size-link;
+    font-weight: $font-weight-normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    color: $color-black;
+}
+
+p {
+    font-family: $font-poppins;
+    font-size: $font-size-paragraph;
+    font-weight: $font-weight-light;
+}
+

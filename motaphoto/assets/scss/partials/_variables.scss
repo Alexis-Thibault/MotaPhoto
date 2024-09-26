@@ -1,42 +1,34 @@
-h1 {
-    font-family: "Space Mono", monospace;
-    font-size: 32px;
-    font-weight: 700;
-    font-style: italic;
+// Définition des polices
+$font-poppins: 'Poppins', sans-serif;
+$font-space-mono: 'Space Mono', monospace;
+
+// Définition des tailles de police
+$font-size-h1: 32px;
+$font-size-h2: 24px;
+$font-size-h3: 16px;
+$font-size-h4: 14px;
+$font-size-paragraph: 14px;
+$font-size-link: 22px;
+
+// Définition des poids de police
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+// Couleurs
+$color-black: black;
+$color-red: red;
+
+// Importation des polices
+@font-face {
+    font-family: $font-poppins;
+    src: url('assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
 }
 
-h2 {
-    font-family: "Space Mono", monospace;
-    font-size: 24px;
-    font-weight: 400;
-    font-style: italic;
+@font-face {
+    font-family: $font-space-mono;
+    src: url('assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'),
+        url('assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype'),
+        url('assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype'),
+        url('assets/fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype');
 }
-
-h3 {
-    font-family: "Space Mono", monospace;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-}
-
-h4 {
-    font-family: "Space Mono", monospace;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-a {
-    font-family: "Space Mono", monospace;
-    font-size: 24px;
-    font-weight: 400;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-}
-
-p {
-    font-family: 'Poppins';
-    font-size: 14px;
-    font-weight: 300;
-}
-

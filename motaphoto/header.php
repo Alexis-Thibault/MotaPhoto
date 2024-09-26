@@ -11,7 +11,9 @@
 
   <nav>
     <div>
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt="Logo">
+      <a href="<?php echo home_url(); ?>">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt="Logo">
+      </a>  
     </div>
     <div>
       <a href="#">Accueil</a>

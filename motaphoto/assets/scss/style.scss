@@ -16,6 +16,10 @@ Text Domain: motaphoto
 
 // style.scss
 
+body {
+    margin: 0;
+}
+
 h1 {
     font-family: $font-space-mono;
     font-size: $font-size-h1;

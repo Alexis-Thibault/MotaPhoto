@@ -1,4 +1,25 @@
-// Mixin pour les transitions
+// Animation fade-in pour l'apparition de la modal
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// Animation fade-out pour la disparition de la modal
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .modal {
     opacity: 0;
     visibility: hidden;
@@ -15,6 +36,12 @@
         display: block;
         visibility: visible;
         opacity: 1;
+        animation: fadeIn 1s ease;
+    }
+
+    &.fade-out {
+        animation: fadeOut 3s ease;
+        opacity: 0;
     }
 
     .modal-content {
@@ -83,13 +110,5 @@
                 }
             }
         }
-    }
-
-    .close {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        font-size: 24px;
-        cursor: pointer;
     }
 }

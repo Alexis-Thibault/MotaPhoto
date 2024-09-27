@@ -4,6 +4,7 @@
       <a href="#">Tous droits réservés</a>
     </footer>
 
-    <?php wp_footer(); ?> <!-- Chargement des scripts de fin de page -->
+    <?php wp_footer(); ?>
+    <?php get_template_part('templates_part/contact-modal'); ?>
   </body>
 </html>

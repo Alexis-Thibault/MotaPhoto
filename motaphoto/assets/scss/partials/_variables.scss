@@ -19,6 +19,14 @@ $font-weight-light: 300;
 $color-black: #000000;
 $color-red: #E00000;
 $color-white: #FFFFFF;
+$color-grey: #B8BBC2; 
+$secondary-grey-color: #D8D8D8; 
+
+// Modal
+$modal-bg-color: rgba(0, 0, 0, 0.5);
+$modal-content-bg: #fff;
+$box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+$transition-time: 0.3s;
 
 // Importation des polices
 @font-face {

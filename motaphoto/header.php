@@ -29,6 +29,7 @@
                 'items_wrap' => '%3$s',
             ));
             ?>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 </header>

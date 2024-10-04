@@ -14,11 +14,18 @@ Text Domain: motaphoto
 @import 'partials/footer';
 @import 'partials/modal';
 
+@import 'photo';
+
 
 // style.scss
 
 body {
     margin: 0;
+
+    .container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 
 h1 {
@@ -63,4 +70,3 @@ p {
     font-size: $font-size-paragraph;
     font-weight: $font-weight-light;
 }
-

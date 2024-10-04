@@ -1,0 +1,102 @@
+.photo {
+    .photo-content {
+        display: flex;
+        align-items: flex-end;
+        gap: 2vw;
+        width: 100%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+
+        .photo-info {
+            width: 50%;
+            border-bottom: 1.5px solid $color-black;
+
+            .photo-info-content {
+                width: 55%;
+                margin-bottom: 2vh;
+
+                h2,
+                p {
+                    text-transform: uppercase;
+                    margin-bottom: 3vh;
+                }
+            }
+        }
+
+        .image {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+
+            img {
+                max-width: 100%;
+                max-height: 80vh;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .contact-image {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+        width: 100%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        border-bottom: 1.5px solid $color-black;
+
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50%;
+            margin-bottom: 5vh;
+
+            .btn-contact {
+                padding: 1.5vh 10vh;
+                background-color: $secondary-grey-color;
+                color: $color-black;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+            }
+
+            .btn-contact:hover {
+                background-color: $color-black;
+                color: $color-white;
+            }
+        }
+
+        .image-date {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+
+            .image-date-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .image-miniature {
+                    display: none;
+                    object-fit: contain;
+                    img {
+                        max-width: 150px;
+                        max-height: 150px;
+                    }
+                }
+                .image-miniature.show {
+                    display: block;
+                }
+
+                .prev-next {
+                    display: flex;
+                    gap: 1vh;
+                    justify-content: flex-end;
+                    margin-top: 1vh;
+                    margin-bottom: 3vh;
+                }
+            }
+        }
+    }
+}

@@ -29,7 +29,7 @@
                 'items_wrap' => '%3$s',
             ));
             ?>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="open-modal">Contact</a>
         </div>
     </nav>
 </header>

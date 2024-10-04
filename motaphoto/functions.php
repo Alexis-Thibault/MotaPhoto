@@ -5,6 +5,7 @@ function motaphoto_enqueue_styles() {
 
     wp_enqueue_script('motaphoto-script', get_template_directory_uri() . '/assets/scripts/scripts.js', array(), null, true);
     wp_enqueue_script('motaphoto-script-modal', get_template_directory_uri() . '/assets/scripts/modal.js', array(), null, true);
+    wp_enqueue_script('motaphoto-script-photo', get_template_directory_uri() . '/assets/scripts/photo.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'motaphoto_enqueue_styles');
 

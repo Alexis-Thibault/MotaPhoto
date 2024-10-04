@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentImageSource = document.querySelector('.image-miniature source');
     const currentImage = document.getElementById('current-image');
 
+    // Fonction pour rediriger vers l'URL de la page d'un post
+    function redirectToPost(postUrl) {
+        if (postUrl) {
+            window.location.href = postUrl; // Redirection vers la page de la photo
+        }
+    }
+
     if (prevArrow) {
         prevArrow.addEventListener('mouseenter', function () {
             const newImageUrl = prevArrow.getAttribute('data-image');
@@ -30,9 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 imageMiniatureContainer.classList.remove('show'); // Cache la miniature
             }
         });
+
+        // Ajout de l'événement "click" pour rediriger vers la page précédente
+        prevArrow.addEventListener('click', function () {
+            const prevPostUrl = prevArrow.getAttribute('data-url'); // URL de la page du post précédent
+            redirectToPost(prevPostUrl);
+        });
     }
 
-    if (nextArrow) { // Gérer l'événement de survol pour la flèche suivante
+    if (nextArrow) {
         nextArrow.addEventListener('mouseenter', function () {
             const newImageUrl = nextArrow.getAttribute('data-image');
             const newWebPUrl = newImageUrl.replace(/\.(jpe?g|png)$/, '.jpeg.webp');
@@ -55,6 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 imageMiniatureContainer.classList.remove('show'); // Cache la miniature
             }
+        });
+
+        // Ajout de l'événement "click" pour rediriger vers la page suivante
+        nextArrow.addEventListener('click', function () {
+            const nextPostUrl = nextArrow.getAttribute('data-url'); // URL de la page du post suivant
+            redirectToPost(nextPostUrl);
         });
     }
 });

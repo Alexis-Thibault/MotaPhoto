@@ -91,10 +91,15 @@
 
                 .prev-next {
                     display: flex;
-                    gap: 1vh;
                     justify-content: flex-end;
                     margin-top: 1vh;
                     margin-bottom: 3vh;
+                    cursor: pointer;
+
+                    img {
+                        max-width: 32px;
+                        padding: 10px;
+                    }
                 }
             }
         }

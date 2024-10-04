@@ -76,23 +76,38 @@ get_header();
                     if ($previous_post) {
                         $prev_image = get_field('image', $previous_post->ID);
                         $prev_image_url = $prev_image ? esc_url($prev_image['url']) : '';
+                        $prev_post_url = get_permalink($previous_post->ID); // URL de la page précédente
                     } else {
-                        $prev_image_url = ''; // Si aucune image précédente n'existe
+                        $prev_image_url = '';
+                        $prev_post_url = ''; // Si aucune page précédente
                     }
+
                     // Récupérer la photo suivante
                     $next_post = get_next_post();
                     if ($next_post) {
                         $next_image = get_field('image', $next_post->ID);
                         $next_image_url = $next_image ? esc_url($next_image['url']) : '';
+                        $next_post_url = get_permalink($next_post->ID); // URL de la page suivante
                     } else {
-                        $next_image_url = ''; // Si aucune image suivante n'existe
+                        $next_image_url = '';
+                        $next_post_url = ''; // Si aucune page suivante
                     }
                 ?>
+
                 <div class="prev-next">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/Line 6.svg'); ?>" alt="Flèche retour" 
-                        class="prev-arrow" data-image="<?php echo esc_attr($prev_image_url); ?>">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/Line 7.svg'); ?>" alt="Flèche après" 
-                        class="next-arrow" data-image="<?php echo esc_attr($next_image_url); ?>">
+                    <?php if ($previous_post) : ?>
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/Line 6.svg'); ?>" alt="Flèche retour" 
+                            class="prev-arrow" data-image="<?php echo esc_attr($prev_image_url); ?>" data-url="<?php echo esc_url($prev_post_url); ?>">
+                    <?php else : ?>
+                        <p>Il n'y a pas de photo moins récente.</p>
+                    <?php endif; ?>
+                    
+                    <?php if ($next_post) : ?>
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/Line 7.svg'); ?>" alt="Flèche après" 
+                            class="next-arrow" data-image="<?php echo esc_attr($next_image_url); ?>" data-url="<?php echo esc_url($next_post_url); ?>">
+                    <?php else : ?>
+                        <p>Il n'y a pas de photo plus récente.</p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

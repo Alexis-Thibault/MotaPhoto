@@ -5,15 +5,32 @@
         gap: 2vw;
         width: 100%;
         margin-top: 5vh;
-        margin-bottom: 5vh;
+
+        @media (max-width: 960px) {
+            flex-direction: column-reverse;
+        }
 
         .photo-info {
             width: 50%;
             border-bottom: 1.5px solid $color-black;
 
+            @media (max-width: 960px) {
+                width: 100%;
+            }
+
+
             .photo-info-content {
                 width: 55%;
                 margin-bottom: 2vh;
+
+                @media (max-width: 960px) {
+                    width: auto;
+
+                    h2 {
+                        font-size: 48px;
+                    }
+                }
+
 
                 h2,
                 p {
@@ -28,6 +45,10 @@
             display: flex;
             justify-content: flex-end;
 
+            @media (max-width: 960px) {
+                width: 100%;
+            }
+
             img {
                 max-width: 100%;
                 max-height: 80vh;
@@ -41,16 +62,24 @@
         align-items: center;
         gap: 2vw;
         width: 100%;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
+        margin-bottom: 1vh;
         border-bottom: 1.5px solid $color-black;
+
+        @media (max-width: 960px) {
+            justify-content: center;
+        }
 
         .contact {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 50%;
-            margin-bottom: 5vh;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+
+            @media (max-width: 960px) {
+                flex-direction: column;
+            }
 
             .btn-contact {
                 padding: 1.5vh 10vh;
@@ -72,6 +101,10 @@
             justify-content: flex-end;
             width: 50%;
 
+            @media (max-width: 768px) {
+                display: none;
+            }
+
             .image-date-content {
                 display: flex;
                 flex-direction: column;
@@ -80,20 +113,23 @@
                 .image-miniature {
                     display: none;
                     object-fit: contain;
+
                     img {
                         max-width: 150px;
                         max-height: 150px;
                     }
                 }
+
                 .image-miniature.show {
-                    display: block;
+                    display: flex;
+                    height: 155px;
+                    justify-content: center;
+                    align-items: center;
                 }
 
                 .prev-next {
                     display: flex;
                     justify-content: flex-end;
-                    margin-top: 1vh;
-                    margin-bottom: 3vh;
                     cursor: pointer;
 
                     img {
@@ -102,6 +138,13 @@
                     }
                 }
             }
+        }
+    }
+
+    .like {
+
+        h3 {
+            margin: 50px 0px;
         }
     }
 }

@@ -1,4 +1,3 @@
-
 <?php
 get_header();
 ?>
@@ -112,6 +111,50 @@ get_header();
             </div>
         </div>
     </div>
+
+    <?php
+        // Récupérer les catégories de la photo actuelle
+        $categories = wp_get_post_terms(get_the_ID(), 'categorie');
+
+        if (!empty($categories)) {
+            // Prendre la première catégorie pour filtrer
+            $category_id = $categories[0]->term_id;
+
+            // Requête personnalisée pour récupérer 2 photos aléatoires de la même catégorie
+            $args = array(
+                'post_type' => 'photos', // Le slug de ton CPT 'photos'
+                'posts_per_page' => 2, // Limiter à 2 photos
+                'orderby' => 'rand', // Trier de façon aléatoire
+                'post__not_in' => array(get_the_ID()), // Exclure la photo en cours
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'categorie', // La taxonomie 'categorie'
+                        'field'    => 'term_id', // Filtrer par ID de la catégorie
+                        'terms'    => $category_id, // ID de la catégorie courante
+                    ),
+                ),
+            );
+
+            $related_photos_query = new WP_Query($args);
+
+            
+            if ($related_photos_query->have_posts()) : ?>
+                <div class="like">
+                    <h3>Vous aimerez aussi</h3>
+                    <div class="photo-container">
+                        <?php
+                        // Boucler sur les photos trouvées
+                        while ($related_photos_query->have_posts()) : $related_photos_query->the_post();
+                            get_template_part('templates_part/photo_block');
+                        endwhile;
+                        ?>
+                    </div>
+                </div> 
+                <?php
+                wp_reset_postdata(); // Réinitialiser la requête principale
+            endif;
+        }
+    ?>
 </section>
 
 <?php

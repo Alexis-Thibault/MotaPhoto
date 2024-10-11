@@ -27,12 +27,13 @@ if ($images) {
 </div>
 
 <!-- Section où tu affiches les blocs d'images du CPT "photos" -->
-<div class="photo-container container">
+<div class="photo-container container" id="photo-container">
     <?php 
     // Créer une nouvelle requête pour récupérer les photos du CPT "photos"
     $args = array(
         'post_type' => 'photos', // Type de contenu personnalisé
-        'posts_per_page' => -1, // Récupérer toutes les photos
+        'posts_per_page' => 8, // Récupérer les 8 premières photos
+        'paged' => 1, // Première page
     );
     $photo_query = new WP_Query($args);
 
@@ -48,6 +49,11 @@ if ($images) {
         echo '<p>Aucune photo trouvée.</p>';
     endif;
     ?>
+</div>
+
+<!-- Bouton Charger plus -->
+<div class="load-more-container">
+    <button id="load-more" data-page="1" data-max-page="<?php echo $photo_query->max_num_pages; ?>">Charger plus</button>
 </div>
 
 <?php get_footer(); ?>

@@ -1,0 +1,10 @@
+.header-home {
+    height: calc(100vh - 100px); // Ajuster la hauteur pour tenir compte du header
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

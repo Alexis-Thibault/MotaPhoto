@@ -30,7 +30,7 @@ if ($images) {
             <option value="">Catégories</option>
             <?php
             // Récupérer les catégories
-            $categories = get_terms(array('taxonomy' => 'categorie')); // Remplace 'category' par le slug de ta taxonomie
+            $categories = get_terms(array('taxonomy' => 'categorie'));
             foreach ($categories as $category) {
                 echo '<option value="' . $category->term_id . '">' . $category->name . '</option>';
             }
@@ -41,7 +41,7 @@ if ($images) {
             <option value="">Formats</option>
             <?php
             // Récupérer les formats
-            $formats = get_terms(array('taxonomy' => 'format')); // Remplace 'format' par le slug de ta taxonomie
+            $formats = get_terms(array('taxonomy' => 'format'));
             foreach ($formats as $format) {
                 echo '<option value="' . $format->term_id . '">' . $format->name . '</option>';
             }

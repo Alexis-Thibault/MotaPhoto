@@ -1,11 +1,11 @@
 <?php
 $image = get_field('image');
 $categories = wp_get_post_terms(get_the_ID(), 'categorie');
-$reference = get_field('reference'); // Champ ACF 'reference'
+$reference = get_field('reference');
 
 if ($image) :
 ?>
-    <div class="photo-block">
+    <div class="photo-block" data-image-url="<?php echo esc_url($image['url']); ?>" data-category="<?php echo esc_html($categories[0]->name); ?>" data-reference="<?php echo esc_html($reference); ?>">
         <img class="photo-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_title(); ?>">
 
         <div class="photo-title">
@@ -25,11 +25,11 @@ if ($image) :
         </div>
 
         <!-- Icône fullscreen qui déclenche la lightbox -->
-        <div class="icon-lightbox" onclick="openLightbox('<?php echo esc_url($image['url']); ?>', '<?php echo esc_html($categories[0]->name); ?>', '<?php echo esc_html($reference); ?>')">
+        <div class="icon-lightbox" data-image-url="<?php echo esc_url($image['url']); ?>" data-category="<?php echo esc_html($categories[0]->name); ?>" data-reference="<?php echo esc_html($reference); ?>" onclick="openLightbox(this)">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Icon_fullscreen.png" alt="Icone lightbox">
         </div>
-    </div>
 
+    </div>
 <?php
 else :
     echo '<p>Aucune photo trouvée.</p>';

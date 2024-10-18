@@ -37,15 +37,15 @@ jQuery(document).ready(function($) {
             type: 'POST',
             data: {
                 action: 'filter_photos',
-                category: $('#category-filter').val(), // Assurez-vous que le nom est correct ici
+                category: $('#category-filter').val(), 
                 format: $('#format-filter').val(),
                 date_order: $('#date-order').val(),
-                page: 1 // Pour charger la première page
+                page: 1 
             },
             success: function(response) {
                 $('#photo-container').html(response);
-                loadMoreButton.data('page', 1); // Réinitialiser le compteur de pages
-                loadMoreButton.show(); // Afficher le bouton si masqué
+                loadMoreButton.data('page', 1);
+                loadMoreButton.show();
             }
         });
     });

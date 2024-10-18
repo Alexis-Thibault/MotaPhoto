@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuToggle.addEventListener("click", function () {
         navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active"); // Ajoute ou enlève la classe active pour l'animation
+        menuToggle.classList.toggle("active");
 
         // Change le menu burger en croix
         if (menuToggle.classList.contains("active")) {
-            menuToggle.setAttribute("aria-label", "Fermer le menu"); // Accessibilité
+            menuToggle.setAttribute("aria-label", "Fermer le menu");
         } else {
             menuToggle.setAttribute("aria-label", "Ouvrir le menu");
         }

@@ -7,6 +7,7 @@ function motaphoto_enqueue_styles() {
     wp_enqueue_script('motaphoto-script-modal', get_template_directory_uri() . '/assets/scripts/modal.js', array(), null, true);
     wp_enqueue_script('motaphoto-script-photo', get_template_directory_uri() . '/assets/scripts/photo.js', array(), null, true);
     wp_enqueue_script('motaphoto-script-home', get_template_directory_uri() . '/assets/scripts/home.js', array(), null, true);
+    wp_enqueue_script('motaphoto-script-lightbox', get_template_directory_uri() . '/assets/scripts/lightbox.js', array(), null, true);
 
     wp_localize_script('motaphoto-script-home', 'wp_localize_script_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
@@ -39,7 +40,7 @@ function load_more_photos() {
     // Ajouter les filtres
     if ($category) {
         $args['tax_query'][] = array(
-            'taxonomy' => 'categorie', // Correction ici
+            'taxonomy' => 'categorie',
             'field' => 'term_id',
             'terms' => $category,
         );
@@ -47,7 +48,7 @@ function load_more_photos() {
 
     if ($format) {
         $args['tax_query'][] = array(
-            'taxonomy' => 'format', // Assurez-vous que 'format' est le bon slug
+            'taxonomy' => 'format',
             'field' => 'term_id',
             'terms' => $format,
         );
@@ -76,10 +77,10 @@ function load_more_photos() {
 }
 
 function filter_photos() {
-    $paged = 1; // Par défaut, on commence par la première page
+    $paged = 1;
 
     // Récupérer les valeurs des filtres
-    $category = $_POST['category']; // Correction ici
+    $category = $_POST['category'];
     $format = $_POST['format'];
     $date_order = $_POST['date_order'];
 
@@ -95,7 +96,7 @@ function filter_photos() {
     // Si une catégorie est sélectionnée
     if ($category) {
         $args['tax_query'][] = array(
-            'taxonomy' => 'categorie', // Correction ici
+            'taxonomy' => 'categorie',
             'field' => 'term_id',
             'terms' => $category,
         );
@@ -104,7 +105,7 @@ function filter_photos() {
     // Si un format est sélectionné
     if ($format) {
         $args['tax_query'][] = array(
-            'taxonomy' => 'format', // Assurez-vous que 'format' est le bon slug
+            'taxonomy' => 'format',
             'field' => 'term_id',
             'terms' => $format,
         );
@@ -124,7 +125,7 @@ function filter_photos() {
 }
 
 add_action('wp_ajax_filter_photos', 'filter_photos');
-add_action('wp_ajax_nopriv_filter_photos', 'filter_photos'); // Pour les utilisateurs non connectés
+add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
-add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos'); // Pour les utilisateurs non connectés
+add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 add_action('init', 'register_my_menus');

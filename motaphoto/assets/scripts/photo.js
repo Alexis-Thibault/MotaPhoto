@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow'); // Ciblez la flèche suivante
+    const nextArrow = document.querySelector('.next-arrow');
     const imageMiniature = document.querySelector('.image-miniature img');
-    const imageMiniatureContainer = document.querySelector('.image-miniature'); // Ciblez le conteneur de la miniature
+    const imageMiniatureContainer = document.querySelector('.image-miniature');
     const currentImageSource = document.querySelector('.image-miniature source');
     const currentImage = document.getElementById('current-image');
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (currentImageSource) {
                     currentImageSource.srcset = newWebPUrl;
                 }
-                imageMiniatureContainer.classList.add('show'); // Affiche la miniature
+                imageMiniatureContainer.classList.add('show');
             }
         });
 
@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (currentImageSource) {
                     currentImageSource.srcset = originalWebPUrl;
                 }
-                imageMiniatureContainer.classList.remove('show'); // Cache la miniature
+                imageMiniatureContainer.classList.remove('show');
             }
         });
 
         // Ajout de l'événement "click" pour rediriger vers la page précédente
         prevArrow.addEventListener('click', function () {
-            const prevPostUrl = prevArrow.getAttribute('data-url'); // URL de la page du post précédent
+            const prevPostUrl = prevArrow.getAttribute('data-url');
             redirectToPost(prevPostUrl);
         });
     }
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (currentImageSource) {
                     currentImageSource.srcset = newWebPUrl;
                 }
-                imageMiniatureContainer.classList.add('show'); // Affiche la miniature
+                imageMiniatureContainer.classList.add('show');
             }
         });
 
@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (currentImageSource) {
                     currentImageSource.srcset = originalWebPUrl;
                 }
-                imageMiniatureContainer.classList.remove('show'); // Cache la miniature
+                imageMiniatureContainer.classList.remove('show');
             }
         });
 
         // Ajout de l'événement "click" pour rediriger vers la page suivante
         nextArrow.addEventListener('click', function () {
-            const nextPostUrl = nextArrow.getAttribute('data-url'); // URL de la page du post suivant
+            const nextPostUrl = nextArrow.getAttribute('data-url');
             redirectToPost(nextPostUrl);
         });
     }

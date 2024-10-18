@@ -6,6 +6,10 @@
 
 <!-- Lightbox structure -->
 <div id="lightbox" class="lightbox" style="display: none;">
+    <div class="lightbox-prev">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_prev.svg" alt="Précédent">
+    </div>
+    
     <div class="lightbox-content">
         <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
         <img id="lightbox-image" src="" alt="Image Lightbox">
@@ -13,6 +17,10 @@
             <p class="lightbox-ref"></p>
             <p class="lightbox-category"></p>
         </div>
+    </div>
+
+    <div class="lightbox-next">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_next.svg" alt="Suivant">
     </div>
 </div>
 

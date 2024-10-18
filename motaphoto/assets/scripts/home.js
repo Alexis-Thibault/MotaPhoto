@@ -50,3 +50,22 @@ jQuery(document).ready(function($) {
         });
     });
 });
+
+
+function openLightbox(imageUrl, categoryName, reference) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCategory = document.querySelector('.lightbox-category');
+    const lightboxRef = document.querySelector('.lightbox-ref');
+
+    lightboxImage.src = imageUrl;
+    lightboxCategory.textContent = 'Catégorie: ' + categoryName;
+    lightboxRef.textContent = 'Référence: ' + reference;
+
+    lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+}

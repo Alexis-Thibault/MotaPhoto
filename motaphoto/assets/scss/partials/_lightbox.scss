@@ -42,16 +42,34 @@
         font-size: 18px;
         margin-top: 10px;
 
-        .lightbox-ref {
+        .lightbox-ref,
+        .lightbox-category {
             position: absolute;
             bottom: -30px;
+            text-transform: uppercase;
+        }
+
+        .lightbox-ref {
+            position: absolute;
             left: 10px;
+
+            @media (max-width: 768px) {
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -40px;
+            }
         }
 
         .lightbox-category {
             position: absolute;
-            bottom: -30px;
             right: 10px;
+
+            @media (max-width: 768px) {
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -80px;
+            }
         }
+
     }
 }

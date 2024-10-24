@@ -1,0 +1,110 @@
+header {
+    padding: 25px 10%;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: $color-black;
+
+            img {
+                width: 250px;
+                height: auto;
+                margin-right: 10px;
+            }
+        }
+
+        // Styles pour le bouton menu burger
+        .menu-toggle {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                z-index: 2;
+
+                .bar {
+                    width: 30px;
+                    height: 2px;
+                    border-radius: 5px;
+                    background-color: $color-black;
+                    margin: 4px;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            &.active {
+                .bar {
+                    &:nth-child(1) {
+                        transform: translateY(10px) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translateY(-10px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        // Liens de navigation
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            background-color: $color-white;
+            padding: 10px 0;
+            z-index: 1;
+
+            @media (max-width: 768px) {
+                display: flex;
+                z-index: -1;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                height: calc(100vh - 150px);
+                gap: 40px;
+                right: 0;
+                background-color: $color-red;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transform: translateY(-200px);
+                transition: opacity 1s ease, transform 1s ease;
+            }
+
+            &.active {
+                display: flex;
+                opacity: 1;
+                z-index: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px;
+
+        nav {
+            a {
+                margin-left: 0;
+                color: $color-white;
+                font-size: $font-size-link + 25px;
+            }
+        }
+    }
+}

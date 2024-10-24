@@ -1,0 +1,43 @@
+// Définition des polices
+$font-poppins: 'Poppins', sans-serif;
+$font-space-mono: 'Space Mono', monospace;
+
+// Définition des tailles de police
+$font-size-h1: 66px;
+$font-size-h2: 66px;
+$font-size-h3: 22px;
+$font-size-h4: 14px;
+$font-size-paragraph: 14px;
+$font-size-link: 22px;
+
+// Définition des poids de police
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+// Couleurs
+$color-black: #000000;
+$color-red: #E00000;
+$color-white: #FFFFFF;
+$color-grey: #B8BBC2; 
+$secondary-grey-color: #D8D8D8; 
+
+// Modal
+$modal-bg-color: rgba(0, 0, 0, 0.5);
+$modal-content-bg: #fff;
+$box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+$transition-time: 0.3s;
+
+// Importation des polices
+@font-face {
+    font-family: $font-poppins;
+    src: url('assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: $font-space-mono;
+    src: url('assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'),
+        url('assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype'),
+        url('assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype'),
+        url('assets/fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype');
+}

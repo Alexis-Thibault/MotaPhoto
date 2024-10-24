@@ -1,0 +1,149 @@
+.photo {
+    .photo-content {
+        display: flex;
+        align-items: flex-end;
+        gap: 2vw;
+        width: 100%;
+        margin-top: 5vh;
+
+        @media (max-width: 960px) {
+            flex-direction: column-reverse;
+        }
+
+        .photo-info {
+            width: 50%;
+            border-bottom: 1.5px solid $color-black;
+
+            @media (max-width: 960px) {
+                width: 100%;
+            }
+
+
+            .photo-info-content {
+                width: 55%;
+                margin-bottom: 2vh;
+
+                @media (max-width: 960px) {
+                    width: auto;
+
+                    h2 {
+                        font-size: 48px;
+                    }
+                }
+
+
+                h2,
+                p {
+                    text-transform: uppercase;
+                    margin-bottom: 3vh;
+                }
+            }
+        }
+
+        .image {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+
+            @media (max-width: 960px) {
+                width: 100%;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 80vh;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .contact-image {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+        width: 100%;
+        margin-bottom: 1vh;
+        border-bottom: 1.5px solid $color-black;
+
+        @media (max-width: 960px) {
+            justify-content: center;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50%;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+
+            @media (max-width: 960px) {
+                flex-direction: column;
+            }
+
+            .btn-contact {
+                padding: 1.5vh 10vh;
+                background-color: $secondary-grey-color;
+                color: $color-black;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+            }
+
+            .btn-contact:hover {
+                background-color: $color-black;
+                color: $color-white;
+            }
+        }
+
+        .image-date {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+            .image-date-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .image-miniature {
+                    display: none;
+                    object-fit: contain;
+
+                    img {
+                        max-width: 150px;
+                        max-height: 150px;
+                    }
+                }
+
+                .image-miniature.show {
+                    display: flex;
+                    height: 155px;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .prev-next {
+                    display: flex;
+                    justify-content: flex-end;
+                    cursor: pointer;
+
+                    img {
+                        max-width: 32px;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .like {
+        h3 {
+            margin: 50px 0px;
+        }
+    }
+}

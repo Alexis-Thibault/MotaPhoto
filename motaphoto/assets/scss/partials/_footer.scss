@@ -1,0 +1,28 @@
+footer {
+    padding: 25px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1.5px solid $color-black;
+
+    a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $color-black;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: darken($color-black, 15%);
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 20px 10px;
+
+        a {
+            padding: 10px 0;
+        }
+    }
+}

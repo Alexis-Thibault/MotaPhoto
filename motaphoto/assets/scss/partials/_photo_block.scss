@@ -78,10 +78,15 @@
 .photo-block:hover .photo-title,
 .photo-block:hover .photo-category,
 .photo-block:hover .icon-link,
-.photo-block:hover .icon-lightbox {
+.photo-block:hover .icon-lightbox,
+.photo-block.active .photo-title,
+.photo-block.active .photo-category,
+.photo-block.active .icon-link,
+.photo-block.active .icon-lightbox {
     opacity: 1;
 }
 
-.photo-block:hover .photo-image {
+.photo-block:hover .photo-image,
+.photo-block.active .photo-image {
     filter: brightness(50%);
 }

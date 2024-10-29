@@ -1,42 +1,40 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function($) {
     let currentImageIndex = 0;
     let imagesArray = [];
 
-    // Attache la fonction openLightbox à window pour qu'elle soit accessible globalement
     window.openLightbox = function(element) {
-        const lightbox = jQuery('#lightbox');
+        const lightbox = $('#lightbox');
 
-        imagesArray = []; // Réinitialise le tableau
+        imagesArray = [];
+        $('.photo-block').each(function(index) {
+            const imgUrl = $(this).data('image-url');
+            const imgCategory = $(this).data('category');
+            const imgReference = $(this).data('reference');
 
-        // Remplir imagesArray avec les données des photos
-        jQuery('.photo-block').each(function(index) {
-            const imgUrl = jQuery(this).data('image-url');
-            const imgCategory = jQuery(this).data('category');
-            const imgReference = jQuery(this).data('reference');
-
-            imagesArray.push({
-                url: imgUrl,
-                category: imgCategory,
-                reference: imgReference,
-            });
-
-            // Si l'image correspond à celle que nous ouvrons, met à jour l'indice actuel
-            if (imgUrl === jQuery(element).data('image-url')) {
-                currentImageIndex = index;
+            if (imgUrl && imgCategory && imgReference) {
+                imagesArray.push({
+                    url: imgUrl,
+                    category: imgCategory,
+                    reference: imgReference,
+                });
+                if (imgUrl === $(element).data('image-url')) {
+                    currentImageIndex = index;
+                }
             }
         });
 
-        // Afficher l'image, la catégorie et la référence dans la lightbox
-        updateLightboxContent();
-
-        lightbox.css('display', 'flex');
-    }
+        if (imagesArray.length > 0) {
+            updateLightboxContent();
+            lightbox.css('display', 'flex');
+        } else {
+            console.error("Aucune image valide trouvée pour la lightbox.");
+        }
+    };
 
     window.closeLightbox = function() {
-        jQuery('#lightbox').hide();
-    }
+        $('#lightbox').hide();
+    };
 
-    // Fonction pour aller à l'image précédente
     function showPreviousImage() {
         if (currentImageIndex > 0) {
             currentImageIndex--;
@@ -44,7 +42,6 @@ jQuery(document).ready(function() {
         }
     }
 
-    // Fonction pour aller à l'image suivante
     function showNextImage() {
         if (currentImageIndex < imagesArray.length - 1) {
             currentImageIndex++;
@@ -52,17 +49,18 @@ jQuery(document).ready(function() {
         }
     }
 
-    // Met à jour le contenu de la lightbox
     function updateLightboxContent() {
         const currentImage = imagesArray[currentImageIndex];
 
-        // Assigner les valeurs de l'image actuelle
-        jQuery('#lightbox-image').attr('src', currentImage.url);
-        jQuery('.lightbox-category').text('Catégorie: ' + currentImage.category);
-        jQuery('.lightbox-ref').text('Référence: ' + currentImage.reference);
+        if (currentImage) {
+            $('#lightbox-image').attr('src', currentImage.url);
+            $('.lightbox-category').text('Catégorie: ' + currentImage.category);
+            $('.lightbox-ref').text('Référence: ' + currentImage.reference);
+        } else {
+            console.error("Erreur lors de la mise à jour du contenu de la lightbox.");
+        }
     }
 
-    // Ajoute les événements aux flèches
-    jQuery('.lightbox-prev').on('click', showPreviousImage);
-    jQuery('.lightbox-next').on('click', showNextImage);
+    $('.lightbox-prev').on('click', showPreviousImage);
+    $('.lightbox-next').on('click', showNextImage);
 });

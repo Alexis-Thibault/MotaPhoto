@@ -49,8 +49,12 @@ jQuery(document).ready(function($) {
             }
         });
     });
-});
 
+    // Activation de l'opacité au clic
+    $('.photo-block').on('click', function() {
+        $(this).toggleClass('active');
+    });
+});
 
 function openLightbox(imageUrl, categoryName, reference) {
     const lightbox = document.getElementById('lightbox');

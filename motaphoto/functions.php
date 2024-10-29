@@ -3,17 +3,23 @@
 function motaphoto_enqueue_styles() {
     wp_enqueue_style('motaphoto-style', get_stylesheet_uri());
 
-    wp_enqueue_script('motaphoto-script', get_template_directory_uri() . '/assets/scripts/scripts.js', array(), null, true);
-    wp_enqueue_script('motaphoto-script-modal', get_template_directory_uri() . '/assets/scripts/modal.js', array(), null, true);
-    wp_enqueue_script('motaphoto-script-photo', get_template_directory_uri() . '/assets/scripts/photo.js', array(), null, true);
-    wp_enqueue_script('motaphoto-script-home', get_template_directory_uri() . '/assets/scripts/home.js', array(), null, true);
-    wp_enqueue_script('motaphoto-script-lightbox', get_template_directory_uri() . '/assets/scripts/lightbox.js', array(), null, true);
+    // Charger jQuery depuis WordPress
+    wp_enqueue_script('jquery');
 
+    // Charger vos scripts en spécifiant 'jquery' comme dépendance
+    wp_enqueue_script('motaphoto-script', get_template_directory_uri() . '/assets/scripts/scripts.js', array('jquery'), null, true);
+    wp_enqueue_script('motaphoto-script-modal', get_template_directory_uri() . '/assets/scripts/modal.js', array('jquery'), null, true);
+    wp_enqueue_script('motaphoto-script-photo', get_template_directory_uri() . '/assets/scripts/photo.js', array('jquery'), null, true);
+    wp_enqueue_script('motaphoto-script-home', get_template_directory_uri() . '/assets/scripts/home.js', array('jquery'), null, true);
+    wp_enqueue_script('motaphoto-script-lightbox', get_template_directory_uri() . '/assets/scripts/lightbox.js', array('jquery'), null, true);
+
+    // Utiliser wp_localize_script pour passer des variables PHP à votre script
     wp_localize_script('motaphoto-script-home', 'wp_localize_script_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
 }
 add_action('wp_enqueue_scripts', 'motaphoto_enqueue_styles');
+
 
 
 function register_my_menus() {

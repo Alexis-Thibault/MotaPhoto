@@ -98,14 +98,12 @@ get_header();
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/Line 6.svg'); ?>" alt="Flèche retour" 
                             class="prev-arrow" data-image="<?php echo esc_attr($prev_image_url); ?>" data-url="<?php echo esc_url($prev_post_url); ?>">
                     <?php else : ?>
-                        <p>Il n'y a pas de photo moins récente.</p>
                     <?php endif; ?>
                     
                     <?php if ($next_post) : ?>
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/Line 7.svg'); ?>" alt="Flèche après" 
                             class="next-arrow" data-image="<?php echo esc_attr($next_image_url); ?>" data-url="<?php echo esc_url($next_post_url); ?>">
                     <?php else : ?>
-                        <p>Il n'y a pas de photo plus récente.</p>
                     <?php endif; ?>
                 </div>
             </div>

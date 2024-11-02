@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (currentImageSource) {
                     currentImageSource.srcset = newWebPUrl;
                 }
-                imageMiniatureContainer.classList.add('show');
             }
         });
 
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (currentImageSource) {
                     currentImageSource.srcset = originalWebPUrl;
                 }
-                imageMiniatureContainer.classList.remove('show');
             }
         });
 

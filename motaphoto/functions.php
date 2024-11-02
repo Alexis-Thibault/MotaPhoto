@@ -6,11 +6,15 @@ function motaphoto_enqueue_styles() {
     // Charger jQuery depuis WordPress
     wp_enqueue_script('jquery');
 
+    // Charger Select2 CSS et JS
+    wp_enqueue_style('select2-css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css');
+    wp_enqueue_script('select2-js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js', array('jquery'), null, true);
+
     // Charger vos scripts en spécifiant 'jquery' comme dépendance
     wp_enqueue_script('motaphoto-script', get_template_directory_uri() . '/assets/scripts/scripts.js', array('jquery'), null, true);
     wp_enqueue_script('motaphoto-script-modal', get_template_directory_uri() . '/assets/scripts/modal.js', array('jquery'), null, true);
     wp_enqueue_script('motaphoto-script-photo', get_template_directory_uri() . '/assets/scripts/photo.js', array('jquery'), null, true);
-    wp_enqueue_script('motaphoto-script-home', get_template_directory_uri() . '/assets/scripts/home.js', array('jquery'), null, true);
+    wp_enqueue_script('motaphoto-script-home', get_template_directory_uri() . '/assets/scripts/home.js', array('jquery', 'select2-js'), null, true);
     wp_enqueue_script('motaphoto-script-lightbox', get_template_directory_uri() . '/assets/scripts/lightbox.js', array('jquery'), null, true);
 
     // Utiliser wp_localize_script pour passer des variables PHP à votre script
